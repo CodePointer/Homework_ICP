@@ -24,6 +24,7 @@ using namespace cv;
 
 // parameters
 extern const int kControlPointNum;
+extern const float kVeryBigFloatNum;
 
 // global varibles
 vector<vector<Point3f>> g_point_cloud;
@@ -41,15 +42,16 @@ bool ReadFiles(int file_num);
 bool RegistrationAll();
 
 // 保存模型数据
-bool SaveModel();
+bool SaveModel(string model, string file_name);
 
 // 对齐模型
-bool RegistrationModel();
+bool RegistrationModel(int model_num);
 
 // 合并模型
 bool CombineModel();
 
 // 寻找最近点
-uint FindClosestPoint(uint point_idx);
+uint FindClosestPointInAddition(uint point_idx);
+uint FindClosestPointInModel(uint point_idx);
 
 #endif
